@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SehatSathi - The Future of Healthcare</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -45,6 +45,7 @@
             overflow-x: hidden;
             scroll-snap-type: y mandatory;
             height: 100vh;
+            height: 100svh;
             overflow-y: scroll;
         }
 
@@ -55,6 +56,7 @@
         /* Each slide is a full viewport section */
         section {
             height: 100vh;
+            height: 100svh;
             width: 100vw;
             scroll-snap-align: start;
             scroll-snap-stop: always;
@@ -62,8 +64,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 0.75rem;
             overflow: hidden;
+        }
+
+        @media (min-width: 640px) {
+            section {
+                padding: 1.25rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 2rem;
+            }
         }
 
         /* Enhanced Glassmorphism */
@@ -74,7 +88,7 @@
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.08);
         }
-        
+
         .glass-dark {
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(24px);
@@ -99,14 +113,14 @@
         .reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                         transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         /* Staggered delays */
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
@@ -118,9 +132,21 @@
             border-radius: 28px;
             box-shadow: 0 35px 70px -15px rgba(30, 64, 175, 0.18);
             border: 1px solid rgba(226, 232, 240, 0.85);
-            max-height: 70vh;
+            max-height: 32vh;
             object-fit: cover;
             object-position: top;
+        }
+
+        @media (min-width: 640px) {
+            .app-mockup {
+                max-height: 45vh;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .app-mockup {
+                max-height: 70vh;
+            }
         }
 
         /* Improved connection lines */
@@ -143,7 +169,7 @@
         h1, h2, h3, h4 {
             line-height: 1.1;
         }
-        
+
         .section-heading {
             font-weight: 700;
             letter-spacing: -0.04em;
@@ -153,32 +179,32 @@
 <body class="antialiased selection:bg-brand-blue selection:text-white">
 
     <!-- Nav/Indicator -->
-    <div class="fixed top-8 right-8 z-50 text-slate-400 text-sm font-medium tracking-widest uppercase">
+    <div class="fixed top-3 right-3 sm:top-8 sm:right-8 z-50 text-slate-400 text-xs sm:text-sm font-medium tracking-widest uppercase">
         Presentation • SehatSathi
     </div>
 
     <section class="bg-mesh" id="slide-1">
         <div class="max-w-5xl mx-auto text-center flex flex-col items-center">
             <!-- Minimal Logo -->
-            <div class="reveal flex items-center justify-center gap-3 mb-12">
-                <div class="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center text-2xl shadow-xl shadow-blue-500/30">
+            <div class="reveal flex items-center justify-center gap-3 mb-5 sm:mb-8 md:mb-12">
+                <div class="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center text-xl sm:text-2xl shadow-xl shadow-blue-500/30">
                     <i class="fa-solid fa-heart-pulse"></i>
                 </div>
             </div>
-            
-            <h1 class="reveal delay-100 text-7xl md:text-8xl font-black tracking-tighter text-brand-dark mb-8 leading-tight">
+
+            <h1 class="reveal delay-100 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-brand-dark mb-4 sm:mb-6 md:mb-8 leading-tight">
                 SEHAT<span class="text-brand-blue">SATHI</span>
             </h1>
-            
-            <h2 class="reveal delay-200 text-3xl md:text-4xl font-semibold text-slate-700 mb-6">
+
+            <h2 class="reveal delay-200 text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-700 mb-3 sm:mb-4 md:mb-6">
                 Healthcare made simple for every Indian.
             </h2>
-            
-            <p class="reveal delay-300 text-xl text-slate-500 max-w-2xl font-light">
+
+            <p class="reveal delay-300 text-sm sm:text-base md:text-xl text-slate-500 max-w-2xl font-light">
                 One platform connecting Patients, Doctors, and Hospitals.
             </p>
 
-            <div class="reveal delay-400 mt-20 animate-bounce text-slate-300 text-2xl">
+            <div class="reveal delay-400 mt-6 sm:mt-12 md:mt-20 animate-bounce text-slate-300 text-xl sm:text-2xl">
                 <i class="fa-solid fa-chevron-down"></i>
             </div>
         </div>
@@ -191,89 +217,89 @@
             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/85 to-transparent"></div>
         </div>
 
-        <div class="relative z-10 max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative z-10 max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
             <div class="reveal">
-                <h2 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight">Healthcare <br>shouldn't feel <br><span class="text-red-400">like this.</span></h2>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6 md:mb-8 leading-tight">Healthcare <br>shouldn't feel <br><span class="text-red-400">like this.</span></h2>
             </div>
-            
-            <div class="reveal delay-200 grid gap-6 text-slate-300 text-xl font-light border-l-2 border-white/30 pl-8">
+
+            <div class="reveal delay-200 grid gap-2 sm:gap-4 md:gap-6 text-slate-300 text-sm sm:text-base md:text-xl font-light border-l-2 border-white/30 pl-4 sm:pl-6 md:pl-8">
                 <p>"Please wait outside."</p>
                 <p>"Which room is the doctor in?"</p>
                 <p>"Where are your previous reports?"</p>
-                <p class="text-white font-medium mt-4">Chaos. Confusion. Anxiety.</p>
+                <p class="text-white font-medium mt-1 sm:mt-4">Chaos. Confusion. Anxiety.</p>
             </div>
         </div>
     </section>
 
     <section class="bg-brand-light" id="slide-3">
         <div class="max-w-6xl mx-auto w-full">
-            <div class="mb-16 reveal">
-                <h3 class="text-brand-blue font-bold tracking-widest uppercase text-sm mb-3">The Problem</h3>
-                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark section-heading">Four systemic failures in the journey.</h2>
+            <div class="mb-5 sm:mb-8 md:mb-16 reveal">
+                <h3 class="text-brand-blue font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 sm:mb-3">The Problem</h3>
+                <h2 class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark section-heading">Four systemic failures in the journey.</h2>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6">
                 <!-- Card 1 -->
-                <div class="reveal delay-100 glass-card p-8 rounded-3xl">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 text-brand-blue flex items-center justify-center text-2xl mb-6">
+                <div class="reveal delay-100 glass-card p-3 sm:p-5 md:p-8 rounded-2xl md:rounded-3xl">
+                    <div class="w-9 h-9 sm:w-11 sm:h-11 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-slate-50 text-brand-blue flex items-center justify-center text-base sm:text-xl md:text-2xl mb-3 sm:mb-4 md:mb-6">
                         <i class="fa-solid fa-user-doctor"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3">Finding the right doctor</h4>
-                    <p class="text-slate-500 font-light">Patients rely on guesswork and word-of-mouth instead of verified data.</p>
+                    <h4 class="text-sm sm:text-base md:text-xl font-bold mb-1 sm:mb-2 md:mb-3">Finding the right doctor</h4>
+                    <p class="text-slate-500 font-light text-xs sm:text-sm">Patients rely on guesswork and word-of-mouth instead of verified data.</p>
                 </div>
                 <!-- Card 2 -->
-                <div class="reveal delay-200 glass-card p-8 rounded-3xl">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 text-brand-teal flex items-center justify-center text-2xl mb-6">
+                <div class="reveal delay-200 glass-card p-3 sm:p-5 md:p-8 rounded-2xl md:rounded-3xl">
+                    <div class="w-9 h-9 sm:w-11 sm:h-11 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-slate-50 text-brand-teal flex items-center justify-center text-base sm:text-xl md:text-2xl mb-3 sm:mb-4 md:mb-6">
                         <i class="fa-regular fa-clock"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3">Long waiting time</h4>
-                    <p class="text-slate-500 font-light">Hours wasted in crowded lobbies waiting for a 10-minute consultation.</p>
+                    <h4 class="text-sm sm:text-base md:text-xl font-bold mb-1 sm:mb-2 md:mb-3">Long waiting time</h4>
+                    <p class="text-slate-500 font-light text-xs sm:text-sm">Hours wasted in crowded lobbies waiting for a 10-minute consultation.</p>
                 </div>
                 <!-- Card 3 -->
-                <div class="reveal delay-300 glass-card p-8 rounded-3xl">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 text-purple-600 flex items-center justify-center text-2xl mb-6">
+                <div class="reveal delay-300 glass-card p-3 sm:p-5 md:p-8 rounded-2xl md:rounded-3xl">
+                    <div class="w-9 h-9 sm:w-11 sm:h-11 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-slate-50 text-purple-600 flex items-center justify-center text-base sm:text-xl md:text-2xl mb-3 sm:mb-4 md:mb-6">
                         <i class="fa-regular fa-folder-open"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3">Scattered records</h4>
-                    <p class="text-slate-500 font-light">Medical histories lost in paper files, leading to poor diagnosis.</p>
+                    <h4 class="text-sm sm:text-base md:text-xl font-bold mb-1 sm:mb-2 md:mb-3">Scattered records</h4>
+                    <p class="text-slate-500 font-light text-xs sm:text-sm">Medical histories lost in paper files, leading to poor diagnosis.</p>
                 </div>
                 <!-- Card 4 -->
-                <div class="reveal delay-400 glass-card p-8 rounded-3xl">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-50 text-orange-500 flex items-center justify-center text-2xl mb-6">
+                <div class="reveal delay-400 glass-card p-3 sm:p-5 md:p-8 rounded-2xl md:rounded-3xl">
+                    <div class="w-9 h-9 sm:w-11 sm:h-11 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-slate-50 text-orange-500 flex items-center justify-center text-base sm:text-xl md:text-2xl mb-3 sm:mb-4 md:mb-6">
                         <i class="fa-regular fa-comments"></i>
                     </div>
-                    <h4 class="text-xl font-bold mb-3">No communication</h4>
-                    <p class="text-slate-500 font-light">Zero connectivity between the clinic, the hospital, and the diagnostic lab.</p>
+                    <h4 class="text-sm sm:text-base md:text-xl font-bold mb-1 sm:mb-2 md:mb-3">No communication</h4>
+                    <p class="text-slate-500 font-light text-xs sm:text-sm">Zero connectivity between the clinic, the hospital, and the diagnostic lab.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="bg-white" id="slide-4">
-        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-6 sm:gap-10 md:gap-16 items-center">
             <div class="reveal">
-                <h3 class="text-brand-teal font-bold tracking-widest uppercase text-sm mb-3">The Solution</h3>
-                <h2 class="text-5xl md:text-6xl font-bold text-brand-dark mb-6 tracking-tight section-heading">One Application.<br>Everything Connected.</h2>
-                <p class="text-xl text-slate-500 font-light mb-8 max-w-lg">
+                <h3 class="text-brand-teal font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 sm:mb-3">The Solution</h3>
+                <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-brand-dark mb-3 sm:mb-4 md:mb-6 tracking-tight section-heading">One Application.<br>Everything Connected.</h2>
+                <p class="text-sm sm:text-base md:text-xl text-slate-500 font-light mb-4 sm:mb-6 md:mb-8 max-w-lg">
                     We built a single unified layer that orchestrates the entire healthcare experience. No more silos.
                 </p>
-                
-                <div class="flex flex-col gap-4">
-                    <div class="flex items-center gap-4 text-lg font-medium text-slate-700">
+
+                <div class="flex flex-col gap-2 sm:gap-3 md:gap-4">
+                    <div class="flex items-center gap-3 sm:gap-4 text-sm sm:text-base md:text-lg font-medium text-slate-700">
                         <i class="fa-solid fa-check-circle text-brand-blue"></i> Patients
                     </div>
-                    <div class="flex items-center gap-4 text-lg font-medium text-slate-700">
+                    <div class="flex items-center gap-3 sm:gap-4 text-sm sm:text-base md:text-lg font-medium text-slate-700">
                         <i class="fa-solid fa-check-circle text-brand-blue"></i> Doctors
                     </div>
-                    <div class="flex items-center gap-4 text-lg font-medium text-slate-700">
+                    <div class="flex items-center gap-3 sm:gap-4 text-sm sm:text-base md:text-lg font-medium text-slate-700">
                         <i class="fa-solid fa-check-circle text-brand-blue"></i> Hospitals
                     </div>
-                    <div class="flex items-center gap-4 text-lg font-medium text-slate-700">
+                    <div class="flex items-center gap-3 sm:gap-4 text-sm sm:text-base md:text-lg font-medium text-slate-700">
                         <i class="fa-solid fa-check-circle text-brand-blue"></i> Medical Reports
                     </div>
                 </div>
             </div>
-            
+
             <div class="reveal delay-200 relative">
                 <img src="landing.png" alt="SehatSathi Landing Page" class="app-mockup w-full">
             </div>
@@ -282,79 +308,79 @@
 
     <section class="bg-brand-light" id="slide-5">
         <div class="max-w-6xl mx-auto w-full text-center">
-            <div class="mb-20 reveal">
-                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark section-heading">A frictionless journey.</h2>
+            <div class="mb-4 sm:mb-8 md:mb-20 reveal">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark section-heading">A frictionless journey.</h2>
             </div>
 
             <!-- Horizontal Flow -->
-            <div class="relative flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
+            <div class="relative flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-3 md:gap-0">
                 <!-- Line connecting steps -->
                 <div class="hidden md:block absolute top-1/2 left-10 right-10 h-1 bg-slate-200 -z-10 -translate-y-1/2 rounded-full"></div>
                 <div class="hidden md:block absolute top-1/2 left-10 w-1/3 h-1 bg-brand-blue -z-10 -translate-y-1/2 rounded-full transition-all duration-1000" id="progress-line"></div>
 
                 <!-- Step 1 -->
-                <div class="reveal delay-100 flex flex-col items-center glass-card p-6 rounded-2xl shadow-sm w-48 relative z-10">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-mobile-screen"></i></div>
-                    <p class="font-medium text-sm text-brand-dark text-center">Patient opens app</p>
+                <div class="reveal delay-100 flex flex-col items-center glass-card p-3 sm:p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm w-32 sm:w-40 md:w-48 relative z-10">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center text-sm sm:text-base md:text-xl mb-1 sm:mb-2 md:mb-4"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <p class="font-medium text-xs md:text-sm text-brand-dark text-center">Patient opens app</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="reveal delay-200 flex flex-col items-center glass-card p-6 rounded-2xl shadow-sm w-48 relative z-10">
-                    <div class="w-12 h-12 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-calendar-check"></i></div>
-                    <p class="font-medium text-sm text-brand-dark text-center">Books Doctor</p>
+                <div class="reveal delay-200 flex flex-col items-center glass-card p-3 sm:p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm w-32 sm:w-40 md:w-48 relative z-10">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center text-sm sm:text-base md:text-xl mb-1 sm:mb-2 md:mb-4"><i class="fa-solid fa-calendar-check"></i></div>
+                    <p class="font-medium text-xs md:text-sm text-brand-dark text-center">Books Doctor</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="reveal delay-300 flex flex-col items-center glass-card p-6 rounded-2xl shadow-sm w-48 relative z-10">
-                    <div class="w-12 h-12 rounded-full bg-teal-50 text-brand-teal flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-user-doctor"></i></div>
-                    <p class="font-medium text-sm text-brand-dark text-center">Doctor confirms</p>
+                <div class="reveal delay-300 flex flex-col items-center glass-card p-3 sm:p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm w-32 sm:w-40 md:w-48 relative z-10">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-teal-50 text-brand-teal flex items-center justify-center text-sm sm:text-base md:text-xl mb-1 sm:mb-2 md:mb-4"><i class="fa-solid fa-user-doctor"></i></div>
+                    <p class="font-medium text-xs md:text-sm text-brand-dark text-center">Doctor confirms</p>
                 </div>
                 <!-- Step 4 -->
-                <div class="reveal delay-400 flex flex-col items-center glass-card p-6 rounded-2xl shadow-sm w-48 relative z-10">
-                    <div class="w-12 h-12 rounded-full bg-teal-50 text-brand-teal flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-hospital-user"></i></div>
-                    <p class="font-medium text-sm text-brand-dark text-center">Hospital receives</p>
+                <div class="reveal delay-400 flex flex-col items-center glass-card p-3 sm:p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm w-32 sm:w-40 md:w-48 relative z-10">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-teal-50 text-brand-teal flex items-center justify-center text-sm sm:text-base md:text-xl mb-1 sm:mb-2 md:mb-4"><i class="fa-solid fa-hospital-user"></i></div>
+                    <p class="font-medium text-xs md:text-sm text-brand-dark text-center">Hospital receives</p>
                 </div>
                 <!-- Step 5 -->
-                <div class="reveal delay-500 flex flex-col items-center glass-card p-6 rounded-2xl shadow-sm w-48 relative z-10 border-2 border-brand-blue">
-                    <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-                    <p class="font-bold text-sm text-brand-blue text-center">Report stored forever</p>
+                <div class="reveal delay-500 flex flex-col items-center glass-card p-3 sm:p-4 md:p-6 rounded-xl md:rounded-2xl shadow-sm w-32 sm:w-40 md:w-48 relative z-10 border-2 border-brand-blue">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm sm:text-base md:text-xl mb-1 sm:mb-2 md:mb-4"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <p class="font-bold text-xs md:text-sm text-brand-blue text-center">Report stored forever</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="bg-white" id="slide-6">
-        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-20 items-center">
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-6 sm:gap-10 md:gap-20 items-center">
             <div class="reveal order-2 lg:order-1 relative">
                 <img src="p1.png" alt="Patient Dashboard" class="app-mockup w-full">
             </div>
-            
+
             <div class="reveal delay-200 order-1 lg:order-2">
-                <h3 class="text-brand-blue font-bold tracking-widest uppercase text-sm mb-3">For Patients</h3>
-                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-10 section-heading">Your health, in your hands.</h2>
-                
-                <div class="grid grid-cols-2 gap-y-8 gap-x-4">
+                <h3 class="text-brand-blue font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 sm:mb-3">For Patients</h3>
+                <h2 class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 sm:mb-6 md:mb-10 section-heading">Your health, in your hands.</h2>
+
+                <div class="grid grid-cols-2 gap-y-3 sm:gap-y-5 md:gap-y-8 gap-x-3 sm:gap-x-4">
                     <div>
-                        <h4 class="font-bold text-lg mb-1"><i class="fa-regular fa-calendar text-brand-blue mr-2"></i> Booking</h4>
-                        <p class="text-sm text-slate-500 font-light">Zero wait appointments.</p>
+                        <h4 class="font-bold text-sm sm:text-base md:text-lg mb-1"><i class="fa-regular fa-calendar text-brand-blue mr-2"></i> Booking</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 font-light">Zero wait appointments.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-1"><i class="fa-solid fa-file-medical text-brand-blue mr-2"></i> Reports</h4>
-                        <p class="text-sm text-slate-500 font-light">Lifelong digital records.</p>
+                        <h4 class="font-bold text-sm sm:text-base md:text-lg mb-1"><i class="fa-solid fa-file-medical text-brand-blue mr-2"></i> Reports</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 font-light">Lifelong digital records.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-1"><i class="fa-solid fa-location-dot text-brand-blue mr-2"></i> Nearby</h4>
-                        <p class="text-sm text-slate-500 font-light">Find hospitals instantly.</p>
+                        <h4 class="font-bold text-sm sm:text-base md:text-lg mb-1"><i class="fa-solid fa-location-dot text-brand-blue mr-2"></i> Nearby</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 font-light">Find hospitals instantly.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-1"><i class="fa-solid fa-droplet text-red-500 mr-2"></i> Donors</h4>
-                        <p class="text-sm text-slate-500 font-light">Emergency blood search.</p>
+                        <h4 class="font-bold text-sm sm:text-base md:text-lg mb-1"><i class="fa-solid fa-droplet text-red-500 mr-2"></i> Donors</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 font-light">Emergency blood search.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-1"><i class="fa-solid fa-pills text-brand-blue mr-2"></i> Reminders</h4>
-                        <p class="text-sm text-slate-500 font-light">Never miss a dose.</p>
+                        <h4 class="font-bold text-sm sm:text-base md:text-lg mb-1"><i class="fa-solid fa-pills text-brand-blue mr-2"></i> Reminders</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 font-light">Never miss a dose.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-1"><i class="fa-solid fa-bell text-brand-blue mr-2"></i> Alerts</h4>
-                        <p class="text-sm text-slate-500 font-light">Real-time updates.</p>
+                        <h4 class="font-bold text-sm sm:text-base md:text-lg mb-1"><i class="fa-solid fa-bell text-brand-blue mr-2"></i> Alerts</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 font-light">Real-time updates.</p>
                     </div>
                 </div>
             </div>
@@ -362,31 +388,31 @@
     </section>
 
     <section class="bg-brand-light" id="slide-7">
-        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-20 items-center">
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-6 sm:gap-10 md:gap-20 items-center">
             <div class="reveal">
-                <h3 class="text-brand-teal font-bold tracking-widest uppercase text-sm mb-3">For Doctors</h3>
-                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-8 section-heading">Focus on care, not paperwork.</h2>
-                
-                <ul class="space-y-6">
-                    <li class="flex items-start gap-4">
-                        <div class="mt-1 w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center"><i class="fa-solid fa-check text-xs"></i></div>
-                        <div><h4 class="font-bold">Manage appointments</h4><p class="text-slate-500 text-sm font-light">Clean, organized daily calendar.</p></div>
+                <h3 class="text-brand-teal font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 sm:mb-3">For Doctors</h3>
+                <h2 class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 sm:mb-6 md:mb-8 section-heading">Focus on care, not paperwork.</h2>
+
+                <ul class="space-y-3 sm:space-y-4 md:space-y-6">
+                    <li class="flex items-start gap-2 sm:gap-3 md:gap-4">
+                        <div class="mt-0.5 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-xs"></i></div>
+                        <div><h4 class="font-bold text-sm sm:text-base">Manage appointments</h4><p class="text-slate-500 text-xs sm:text-sm font-light">Clean, organized daily calendar.</p></div>
                     </li>
-                    <li class="flex items-start gap-4">
-                        <div class="mt-1 w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center"><i class="fa-solid fa-check text-xs"></i></div>
-                        <div><h4 class="font-bold">View patient history</h4><p class="text-slate-500 text-sm font-light">Read past reports before they walk in.</p></div>
+                    <li class="flex items-start gap-2 sm:gap-3 md:gap-4">
+                        <div class="mt-0.5 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-xs"></i></div>
+                        <div><h4 class="font-bold text-sm sm:text-base">View patient history</h4><p class="text-slate-500 text-xs sm:text-sm font-light">Read past reports before they walk in.</p></div>
                     </li>
-                    <li class="flex items-start gap-4">
-                        <div class="mt-1 w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center"><i class="fa-solid fa-check text-xs"></i></div>
-                        <div><h4 class="font-bold">Generate reports</h4><p class="text-slate-500 text-sm font-light">Digital prescriptions instantly synced.</p></div>
+                    <li class="flex items-start gap-2 sm:gap-3 md:gap-4">
+                        <div class="mt-0.5 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-xs"></i></div>
+                        <div><h4 class="font-bold text-sm sm:text-base">Generate reports</h4><p class="text-slate-500 text-xs sm:text-sm font-light">Digital prescriptions instantly synced.</p></div>
                     </li>
-                    <li class="flex items-start gap-4">
-                        <div class="mt-1 w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center"><i class="fa-solid fa-check text-xs"></i></div>
-                        <div><h4 class="font-bold">AI assistance</h4><p class="text-slate-500 text-sm font-light">Smart insights for accurate diagnosis.</p></div>
+                    <li class="flex items-start gap-2 sm:gap-3 md:gap-4">
+                        <div class="mt-0.5 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-check text-xs"></i></div>
+                        <div><h4 class="font-bold text-sm sm:text-base">AI assistance</h4><p class="text-slate-500 text-xs sm:text-sm font-light">Smart insights for accurate diagnosis.</p></div>
                     </li>
                 </ul>
             </div>
-            
+
             <div class="reveal delay-200 relative">
                 <img src="doctore.png" alt="Doctor Portal" class="app-mockup w-full">
             </div>
@@ -394,22 +420,22 @@
     </section>
 
     <section class="bg-white" id="slide-8">
-        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-20 items-center">
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-6 sm:gap-10 md:gap-20 items-center">
             <div class="reveal order-2 lg:order-1 relative">
                 <img src="h1.png" alt="Hospital Dashboard" class="app-mockup w-full">
             </div>
-            
+
             <div class="reveal delay-200 order-1 lg:order-2">
-                <h3 class="text-brand-blue font-bold tracking-widest uppercase text-sm mb-3">For Hospitals</h3>
-                <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-8 section-heading">Total operational control.</h2>
-                
-                <div class="flex flex-wrap gap-3">
-                    <span class="px-5 py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-sm">Manage doctors</span>
-                    <span class="px-5 py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-sm">Departments</span>
-                    <span class="px-5 py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-sm">Patients</span>
-                    <span class="px-5 py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-sm">Verification</span>
-                    <span class="px-5 py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-sm">Notifications</span>
-                    <span class="px-5 py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-sm">Analytics</span>
+                <h3 class="text-brand-blue font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 sm:mb-3">For Hospitals</h3>
+                <h2 class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 sm:mb-6 md:mb-8 section-heading">Total operational control.</h2>
+
+                <div class="flex flex-wrap gap-2 sm:gap-3">
+                    <span class="px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-xs sm:text-sm">Manage doctors</span>
+                    <span class="px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-xs sm:text-sm">Departments</span>
+                    <span class="px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-xs sm:text-sm">Patients</span>
+                    <span class="px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-xs sm:text-sm">Verification</span>
+                    <span class="px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-xs sm:text-sm">Notifications</span>
+                    <span class="px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-slate-50 border border-slate-200 rounded-full font-medium text-xs sm:text-sm">Analytics</span>
                 </div>
             </div>
         </div>
@@ -421,23 +447,23 @@
 
         <div class="max-w-4xl mx-auto w-full text-center relative z-10">
             <div class="reveal">
-                <i class="fa-solid fa-wand-magic-sparkles text-4xl text-brand-teal mb-6"></i>
-                <h2 class="text-5xl md:text-6xl font-bold mb-6 section-heading">Intelligence built-in.</h2>
-                <p class="text-xl text-slate-400 font-light mb-16">Making sense of complex medical data instantly.</p>
+                <i class="fa-solid fa-wand-magic-sparkles text-2xl sm:text-3xl md:text-4xl text-brand-teal mb-3 sm:mb-5 md:mb-6"></i>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 section-heading">Intelligence built-in.</h2>
+                <p class="text-sm sm:text-base md:text-xl text-slate-400 font-light mb-5 sm:mb-10 md:mb-16">Making sense of complex medical data instantly.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6 text-left">
-                <div class="reveal delay-100 glass-dark p-8 rounded-3xl">
-                    <h4 class="text-lg font-bold mb-2">Report Analysis</h4>
-                    <p class="text-slate-400 text-sm font-light">Translates dense pathology codes into lay terms.</p>
+            <div class="grid md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 text-left">
+                <div class="reveal delay-100 glass-dark p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl">
+                    <h4 class="text-sm sm:text-base md:text-lg font-bold mb-1 sm:mb-2">Report Analysis</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm font-light">Translates dense pathology codes into lay terms.</p>
                 </div>
-                <div class="reveal delay-200 glass-dark p-8 rounded-3xl">
-                    <h4 class="text-lg font-bold mb-2">Smart Recommendations</h4>
-                    <p class="text-slate-400 text-sm font-light">Proactive health steps based on history.</p>
+                <div class="reveal delay-200 glass-dark p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl">
+                    <h4 class="text-sm sm:text-base md:text-lg font-bold mb-1 sm:mb-2">Smart Recommendations</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm font-light">Proactive health steps based on history.</p>
                 </div>
-                <div class="reveal delay-300 glass-dark p-8 rounded-3xl">
-                    <h4 class="text-lg font-bold mb-2">Future Assistant</h4>
-                    <p class="text-slate-400 text-sm font-light">Conversational AI for instant triage.</p>
+                <div class="reveal delay-300 glass-dark p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl">
+                    <h4 class="text-sm sm:text-base md:text-lg font-bold mb-1 sm:mb-2">Future Assistant</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm font-light">Conversational AI for instant triage.</p>
                 </div>
             </div>
         </div>
@@ -445,25 +471,25 @@
 
     <section class="bg-brand-light" id="slide-10">
         <div class="max-w-6xl mx-auto w-full text-center">
-            <h2 class="reveal text-4xl md:text-5xl font-bold text-brand-dark mb-16 section-heading">The New Standard.</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-                <div class="reveal delay-100 glass-card p-8 rounded-3xl">
-                    <div class="text-brand-blue text-3xl mb-4"><i class="fa-solid fa-fingerprint"></i></div>
-                    <h4 class="text-xl font-bold mb-2">One Identity</h4>
-                    <p class="text-slate-500 font-light">Stop filling forms. Your medical profile travels with you everywhere.</p>
-                </div>
-                
-                <div class="reveal delay-200 glass-card p-8 rounded-3xl">
-                    <div class="text-brand-blue text-3xl mb-4"><i class="fa-solid fa-bolt"></i></div>
-                    <h4 class="text-xl font-bold mb-2">Less Waiting</h4>
-                    <p class="text-slate-500 font-light">Live queue management respects the patient's time.</p>
+            <h2 class="reveal text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-5 sm:mb-10 md:mb-16 section-heading">The New Standard.</h2>
+
+            <div class="grid md:grid-cols-3 gap-3 sm:gap-5 md:gap-8 text-left">
+                <div class="reveal delay-100 glass-card p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl">
+                    <div class="text-brand-blue text-xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 md:mb-4"><i class="fa-solid fa-fingerprint"></i></div>
+                    <h4 class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2">One Identity</h4>
+                    <p class="text-slate-500 font-light text-xs sm:text-sm">Stop filling forms. Your medical profile travels with you everywhere.</p>
                 </div>
 
-                <div class="reveal delay-300 glass-card p-8 rounded-3xl">
-                    <div class="text-brand-blue text-3xl mb-4"><i class="fa-solid fa-network-wired"></i></div>
-                    <h4 class="text-xl font-bold mb-2">Better Communication</h4>
-                    <p class="text-slate-500 font-light">Instant sync between labs, clinics, and hospitals.</p>
+                <div class="reveal delay-200 glass-card p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl">
+                    <div class="text-brand-blue text-xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 md:mb-4"><i class="fa-solid fa-bolt"></i></div>
+                    <h4 class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2">Less Waiting</h4>
+                    <p class="text-slate-500 font-light text-xs sm:text-sm">Live queue management respects the patient's time.</p>
+                </div>
+
+                <div class="reveal delay-300 glass-card p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl">
+                    <div class="text-brand-blue text-xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 md:mb-4"><i class="fa-solid fa-network-wired"></i></div>
+                    <h4 class="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2">Better Communication</h4>
+                    <p class="text-slate-500 font-light text-xs sm:text-sm">Instant sync between labs, clinics, and hospitals.</p>
                 </div>
             </div>
         </div>
@@ -471,12 +497,12 @@
 
     <section class="bg-white" id="slide-11">
         <div class="max-w-5xl mx-auto w-full text-center">
-            <h2 class="reveal text-4xl md:text-5xl font-bold text-brand-dark mb-20 section-heading">An ecosystem for everyone.</h2>
-            
+            <h2 class="reveal text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 sm:mb-8 md:mb-20 section-heading">An ecosystem for everyone.</h2>
+
             <!-- Infographic layout -->
             <div class="relative w-full aspect-square md:aspect-video flex items-center justify-center">
                 <!-- Center Logo -->
-                <div class="reveal w-24 h-24 bg-brand-blue text-white rounded-3xl shadow-2xl flex items-center justify-center text-4xl z-20">
+                <div class="reveal w-14 h-14 sm:w-18 sm:h-18 md:w-24 md:h-24 bg-brand-blue text-white rounded-2xl md:rounded-3xl shadow-2xl flex items-center justify-center text-2xl sm:text-3xl md:text-4xl z-20" style="width: clamp(3.5rem, 8vw, 6rem); height: clamp(3.5rem, 8vw, 6rem);">
                     <i class="fa-solid fa-heart-pulse"></i>
                 </div>
 
@@ -484,28 +510,28 @@
                 <div class="absolute inset-0">
                     <!-- Patient -->
                     <div class="reveal delay-100 absolute top-[10%] left-[20%] md:top-[20%] md:left-[25%] flex flex-col items-center">
-                        <div class="w-16 h-16 bg-slate-50 rounded-full shadow-md flex items-center justify-center text-brand-dark text-xl mb-2"><i class="fa-solid fa-users"></i></div>
-                        <span class="font-medium text-sm">Patients</span>
+                        <div class="w-10 h-10 sm:w-13 sm:h-13 md:w-16 md:h-16 bg-slate-50 rounded-full shadow-md flex items-center justify-center text-brand-dark text-sm sm:text-base md:text-xl mb-1 sm:mb-2" style="width: clamp(2.5rem, 6vw, 4rem); height: clamp(2.5rem, 6vw, 4rem);"><i class="fa-solid fa-users"></i></div>
+                        <span class="font-medium text-xs sm:text-sm">Patients</span>
                     </div>
                     <!-- Doctor -->
                     <div class="reveal delay-200 absolute top-[10%] right-[20%] md:top-[20%] md:right-[25%] flex flex-col items-center">
-                        <div class="w-16 h-16 bg-slate-50 rounded-full shadow-md flex items-center justify-center text-brand-teal text-xl mb-2"><i class="fa-solid fa-user-doctor"></i></div>
-                        <span class="font-medium text-sm">Doctors</span>
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-slate-50 rounded-full shadow-md flex items-center justify-center text-brand-teal text-sm sm:text-base md:text-xl mb-1 sm:mb-2" style="width: clamp(2.5rem, 6vw, 4rem); height: clamp(2.5rem, 6vw, 4rem);"><i class="fa-solid fa-user-doctor"></i></div>
+                        <span class="font-medium text-xs sm:text-sm">Doctors</span>
                     </div>
                     <!-- Hospital -->
                     <div class="reveal delay-300 absolute bottom-[10%] left-[10%] md:bottom-[20%] md:left-[15%] flex flex-col items-center">
-                        <div class="w-16 h-16 bg-slate-50 rounded-full shadow-md flex items-center justify-center text-brand-blue text-xl mb-2"><i class="fa-solid fa-hospital"></i></div>
-                        <span class="font-medium text-sm">Hospitals</span>
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-slate-50 rounded-full shadow-md flex items-center justify-center text-brand-blue text-sm sm:text-base md:text-xl mb-1 sm:mb-2" style="width: clamp(2.5rem, 6vw, 4rem); height: clamp(2.5rem, 6vw, 4rem);"><i class="fa-solid fa-hospital"></i></div>
+                        <span class="font-medium text-xs sm:text-sm">Hospitals</span>
                     </div>
                     <!-- Blood Donors -->
                     <div class="reveal delay-400 absolute bottom-[5%] left-[50%] -translate-x-1/2 flex flex-col items-center">
-                        <div class="w-16 h-16 bg-slate-50 rounded-full shadow-md flex items-center justify-center text-red-500 text-xl mb-2"><i class="fa-solid fa-droplet"></i></div>
-                        <span class="font-medium text-sm">Blood Donors</span>
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-slate-50 rounded-full shadow-md flex items-center justify-center text-red-500 text-sm sm:text-base md:text-xl mb-1 sm:mb-2" style="width: clamp(2.5rem, 6vw, 4rem); height: clamp(2.5rem, 6vw, 4rem);"><i class="fa-solid fa-droplet"></i></div>
+                        <span class="font-medium text-xs sm:text-sm">Blood Donors</span>
                     </div>
                     <!-- Organizations -->
                     <div class="reveal delay-500 absolute bottom-[10%] right-[10%] md:bottom-[20%] md:right-[15%] flex flex-col items-center">
-                        <div class="w-16 h-16 bg-slate-50 rounded-full shadow-md flex items-center justify-center text-purple-600 text-xl mb-2"><i class="fa-solid fa-building-user"></i></div>
-                        <span class="font-medium text-sm">Organizations</span>
+                        <div class="w-10 h-10 md:w-16 md:h-16 bg-slate-50 rounded-full shadow-md flex items-center justify-center text-purple-600 text-sm sm:text-base md:text-xl mb-1 sm:mb-2" style="width: clamp(2.5rem, 6vw, 4rem); height: clamp(2.5rem, 6vw, 4rem);"><i class="fa-solid fa-building-user"></i></div>
+                        <span class="font-medium text-xs sm:text-sm">Organizations</span>
                     </div>
                 </div>
             </div>
@@ -521,12 +547,12 @@
 
         <div class="relative z-10 max-w-5xl mx-auto w-full">
             <div class="reveal max-w-2xl">
-                <i class="fa-solid fa-quote-left text-4xl text-brand-teal mb-6"></i>
-                <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-8">
+                <i class="fa-solid fa-quote-left text-2xl sm:text-3xl md:text-4xl text-brand-teal mb-3 sm:mb-5 md:mb-6"></i>
+                <h2 class="text-xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8">
                     Healthcare should be accessible to everyone. <br>
                     <span class="text-brand-teal">Every patient deserves better care.</span>
                 </h2>
-                <p class="text-xl text-slate-300 font-light border-l-2 border-brand-blue pl-6">
+                <p class="text-sm sm:text-base md:text-xl text-slate-300 font-light border-l-2 border-brand-blue pl-3 sm:pl-5 md:pl-6">
                     Not only in cities. In villages, too. We are building the infrastructure for a healthier tomorrow.
                 </p>
             </div>
@@ -534,36 +560,36 @@
     </section>
 
     <section class="bg-mesh" id="slide-13">
-        <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
+        <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-5 sm:gap-8 md:gap-16 items-center">
             <div class="reveal">
-                <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-brand-dark mb-4">Thank <span class="text-brand-blue">You.</span></h1>
-                <p class="text-2xl text-slate-500 font-light mb-12">Did You Have Any Questions?</p>
-                
-                <div class="flex flex-col gap-4 text-slate-700 font-medium">
-                    <a href="#" class="flex items-center gap-4 hover:text-brand-blue transition-colors">
-                        <i class="fa-solid fa-globe w-6"></i> https://sehat-sathi-bay.vercel.app/
+                <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tighter text-brand-dark mb-2 sm:mb-3 md:mb-4">Thank <span class="text-brand-blue">You.</span></h1>
+                <p class="text-base sm:text-lg md:text-2xl text-slate-500 font-light mb-4 sm:mb-8 md:mb-12">Did You Have Any Questions?</p>
+
+                <div class="flex flex-col gap-2 sm:gap-3 md:gap-4 text-slate-700 font-medium text-xs sm:text-sm md:text-base">
+                    <a href="https://sehat-sathi-bay.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 sm:gap-4 hover:text-brand-blue transition-colors">
+                        <i class="fa-solid fa-globe w-5 sm:w-6 flex-shrink-0"></i> <span class="truncate">https://sehat-sathi-bay.vercel.app/</span>
                     </a>
-                    <a href="#" class="flex items-center gap-4 hover:text-brand-blue transition-colors">
-                        <i class="fa-solid fa-envelope w-6"></i> amitdubey04102004@gmail.com
+                    <a href="mailto:amitdubey04102004@gmail.com" class="flex items-center gap-2 sm:gap-4 hover:text-brand-blue transition-colors">
+                        <i class="fa-solid fa-envelope w-5 sm:w-6 flex-shrink-0"></i> <span class="truncate">amitdubey04102004@gmail.com</span>
                     </a>
-                    <a href="#" class="flex items-center gap-4 hover:text-brand-blue transition-colors">
-                        <i class="fa-brands fa-linkedin w-6"></i> www.linkedin.com/in/amit-dubey-b7a34b23a
+                    <a href="https://www.linkedin.com/in/amit-dubey-b7a34b23a" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 sm:gap-4 hover:text-brand-blue transition-colors">
+                        <i class="fa-brands fa-linkedin w-5 sm:w-6 flex-shrink-0"></i> <span class="truncate">www.linkedin.com/in/amit-dubey-b7a34b23a</span>
                     </a>
-                    <a href="#" class="flex items-center gap-4 hover:text-brand-blue transition-colors">
-                        <i class="fa-brands fa-github w-6"></i> /http://github.com/Eramit-techwave/Sehat-Sathi
+                    <a href="https://github.com/Eramit-techwave/Sehat-Sathi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 sm:gap-4 hover:text-brand-blue transition-colors">
+                        <i class="fa-brands fa-github w-5 sm:w-6 flex-shrink-0"></i> <span class="truncate">github.com/Eramit-techwave/Sehat-Sathi</span>
                     </a>
                 </div>
             </div>
-            
-            <div class="reveal delay-200 flex flex-col items-center justify-center gap-6">
+
+            <div class="reveal delay-200 flex flex-col items-center justify-center gap-3 sm:gap-5 md:gap-6">
                 <!-- Founder Image -->
-                <div class="w-64 h-64 rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/20 border-4 border-white">
+                <div class="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-2xl shadow-blue-900/20 border-4 border-white">
                     <img src="Amit.png.jpg" alt="Amit Dubey" class="w-full h-full object-cover">
                 </div>
                 <div class="text-center">
-                    <h3 class="text-2xl font-bold text-brand-dark">Amit Dubey</h3>
-                    <p class="text-brand-blue font-medium">Founder & AI Engineer</p>
-                    <p class="text-slate-500 text-sm mt-1">Engineering Student</p>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-brand-dark">Amit Dubey</h3>
+                    <p class="text-brand-blue font-medium text-sm sm:text-base">Founder & AI Engineer</p>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-1">Engineering Student</p>
                 </div>
             </div>
         </div>
